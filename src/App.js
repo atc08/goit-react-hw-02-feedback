@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import FeedbackOptions from './components/FeedbackOptions/FeedbackOptions';
+import { Component } from 'react';
+import FeedbackOptions from './components/FeedbackOptions';
 import Statistics from './components/Statistics/Statistics';
-import Notification from './components/Notification/Notification';
+import Notification from './components/Notification';
 import Section from './components/Section';
 
 class App extends Component {
@@ -11,13 +11,6 @@ class App extends Component {
     bad: 0,
   };
 
-  // show = () => {
-  //   if (this.state.good > 0);
-  // };
-  // hide = () => {
-  //   if (this.state.good < 1);
-  // };
-
   leaveFeedback = value => {
     this.setState(prevState => {
       return { [value]: prevState[value] + 1 };
@@ -25,8 +18,11 @@ class App extends Component {
   };
 
   render() {
-    const total = this.state.good + this.state.neutral + this.state.bad;
-    const goodPersent = Math.round((this.state.good / total) * 100);
+    const { good } = this.state;
+    const { neutral } = this.state;
+    const { bad } = this.state;
+    const total = good + neutral + bad;
+    const goodPersent = Math.round((good / total) * 100);
 
     return (
       <div className="App">
@@ -40,9 +36,9 @@ class App extends Component {
         <Section title="Statistics">
           {total > 0 ? (
             <Statistics
-              good={this.state.good}
-              neutral={this.state.neutral}
-              bad={this.state.bad}
+              good={good}
+              neutral={neutral}
+              bad={bad}
               total={total}
               positivePercentage={goodPersent}
             />

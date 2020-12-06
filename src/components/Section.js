@@ -1,11 +1,12 @@
 import PropTypes from 'prop-types';
+import { Fragment } from 'react';
 
 const Section = ({ title, children }) => {
   return (
-    <div>
+    <Fragment>
       {<h2>{title}</h2>}
       {children}
-    </div>
+    </Fragment>
   );
 };
 

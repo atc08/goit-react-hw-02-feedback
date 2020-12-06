@@ -1,0 +1,17 @@
+.FeedbackBtns {
+  display: flex;
+  width: 350px;
+  justify-content: space-between;
+}
+
+.FeedBtn {
+  width: 100px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(188, 144, 0);
+  border: 2px solid rgb(128, 128, 128);
+  border-radius: 10px;
+  background-color: rgb(72, 209, 204);
+  cursor: pointer;
+  outline: none;
+}
