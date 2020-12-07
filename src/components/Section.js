@@ -4,7 +4,7 @@ import { Fragment } from 'react';
 const Section = ({ title, children }) => {
   return (
     <Fragment>
-      {<h2>{title}</h2>}
+      {<h2 className="title">{title}</h2>}
       {children}
     </Fragment>
   );

@@ -1,12 +1,12 @@
-import React from 'react';
-// import s from './Notification.module.css';
+import React, { Fragment } from 'react';
+import s from './Notification.module.css';
 import PropTypes from 'prop-types';
 
 const Notification = ({ message }) => {
   return (
-    <>
-      <p className="NotificationMassege">{message}</p>
-    </>
+    <Fragment>
+      <p className={s.NotificationMassege}>{message}</p>
+    </Fragment>
   );
 };
 

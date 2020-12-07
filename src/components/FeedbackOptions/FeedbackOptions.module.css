@@ -1,9 +1,3 @@
-.FeedbackBtns {
-  display: flex;
-  width: 350px;
-  justify-content: space-between;
-}
-
 .FeedBtn {
   width: 100px;
   text-transform: uppercase;
@@ -14,4 +8,5 @@
   background-color: rgb(72, 209, 204);
   cursor: pointer;
   outline: none;
+  margin-right: 20px;
 }
