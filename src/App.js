@@ -17,12 +17,21 @@ class App extends Component {
     });
   };
 
-  render() {
+  handleTotal = () => {
+    const { good, neutral, bad } = this.state;
+    return good + neutral + bad;
+  };
+
+  handlePositiveFeedbackPersentage = () => {
     const { good } = this.state;
-    const { neutral } = this.state;
-    const { bad } = this.state;
-    const total = good + neutral + bad;
-    const goodPersent = Math.round((good / total) * 100);
+    const total = this.handleTotal();
+    return Math.round((good / total) * 100);
+  };
+
+  render() {
+    const { good, neutral, bad } = this.state;
+    const total = this.handleTotal();
+    const positiveFeedbackPersentage = this.handlePositiveFeedbackPersentage();
 
     return (
       <div className="App">
@@ -39,8 +48,8 @@ class App extends Component {
               good={good}
               neutral={neutral}
               bad={bad}
-              total={total}
-              positivePercentage={goodPersent}
+              onTotal={total}
+              onPositivePercentage={positiveFeedbackPersentage}
             />
           ) : (
             <Notification message="No feedback given" />
